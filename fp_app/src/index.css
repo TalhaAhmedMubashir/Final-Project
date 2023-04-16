@@ -1,0 +1,451 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 80%;
+  min-height: 80vh;
+  /* background-color: black !important; */
+}
+
+.loading {
+  background-color: #0072ff;
+  border-radius: 0.3rem;
+  color: white;
+  width: fit-content;
+  padding: 0.5rem;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.outletScreen {
+  display: flex;
+  flex-direction: column;
+  min-height: 63.6vh;
+}
+
+.outletScreen>* {
+  flex-grow: 1;
+}
+
+
+::placeholder {
+  color: white;
+  opacity: 1;
+  /* Firefox */
+}
+
+.containerLocation {
+  padding-top: 5.6rem;
+  margin-left: 7rem;
+  padding-right: -0.2rem;
+  width: 70%;
+  height: 70vh;
+  /* background-image: url("./Wallpapers/Wall14.jpg"); */
+  background-size: 100% 112%;
+  background-repeat: no-repeat;
+  background-position: 0rem -3rem;
+  border-radius: 5rem;
+}
+
+.backgroundContainer {
+  background-image: url("./Wallpapers/Wall19.jpg");
+  width: 125%;
+  height: 100vh;
+  padding-top: 7rem;
+  background-size: 100% 112%;
+  background-repeat: no-repeat;
+  background-position: 0rem -3rem;
+  z-index: -1 !important;
+}
+
+.CredentialsHeading {
+  margin-left: 4rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: rgb(255 255 255);
+  text-shadow: #0b0000 0 0px 5px;
+}
+
+.Login {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 0.3rem;
+  margin-left: 4rem
+}
+
+.inputfields {
+  margin: 0.2rem 0;
+  border-color: transparent;
+  border: none;
+  border-bottom-left-radius: 0.3rem;
+  /* background-color: #000000c9; */
+  background-color: transparent;
+  color: rgb(255 255 255);
+}
+
+.inputfields:hover {
+  box-shadow: 0px 1.5px 0.3px rgb(255 255 255);
+}
+
+.inputfields:focus-visible {
+  outline: none;
+}
+
+.button {
+  background-color: #00000075;
+  border-radius: 0.5rem;
+  margin: 0.2rem;
+  color: white;
+  padding: 0.2rem 1.2rem;
+  transition: box-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.button:hover {
+  text-shadow: rgb(0 255 204 / 61%) 0px 0px 2px;
+  box-shadow: 0px 0.5px 7.3px rgb(0 216 255);
+}
+
+.switchdiv {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+
+.verticalline {
+  width: 0.1rem;
+  height: 2rem;
+  margin: 0rem 0.2rem;
+  background-color: white;
+}
+
+.controlposition {
+  margin-left: 4rem;
+}
+
+.registration {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.facebookbtnlocation {
+  display: flex;
+  align-items: flex-end;
+}
+
+.nav {
+  width: 125%;
+  height: 2.7rem;
+  background-color: #0072ff;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.navFD {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navFDC {
+  margin: 1rem;
+}
+
+.navSD {
+  display: flex;
+  align-items: center;
+}
+
+.navTRIOButton {
+  border-style: none;
+  height: 1.5rem;
+  width: fit-content;
+  color: white;
+  font-size: 17px;
+  display: flex;
+  background-color: transparent;
+  border-radius: 0.3rem;
+  align-items: center;
+  padding: 1rem 0.3rem;
+  transition: box-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+
+}
+
+.navTRIOButton:hover {
+  border-style: groove;
+  border: 0.5rem;
+  box-shadow: 0px 2px 4px rgb(0 0 0 / 50%);
+}
+
+.navTRIOButton:focus-visible {
+  text-shadow: rgb(255 231 231) 1px 0px 0px;
+  outline: none;
+}
+
+.navuserinfo {
+  margin-top: 0.5rem;
+}
+
+.sidebar-parent {
+  position: relative;
+}
+
+.sidebar {
+  background-color: transparent;
+  position: absolute;
+  top: 2.5rem;
+  left: -3rem;
+  border-radius: 0.5rem;
+  padding: 0.1rem;
+  width: 10rem;
+  border-style: groove;
+  border: 0.5rem;
+  box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+/* .notificationDisplayNone {
+  display: none;
+} */
+
+.nav-sidebar {
+  font-size: 18px;
+}
+
+.nav-item {
+  margin-bottom: 0.5rem;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-shadow: rgb(255 231 231) 1px 0px 0px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  background-color: #0072ff;
+  color: #fff;
+}
+
+.nav-link.active {
+  background-color: #0072ff;
+  color: #fff;
+}
+
+.nav-link i {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.main-render-div-data {
+  width: 125%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0rem;
+  margin: 1rem 1rem;
+  /* box-shadow: 1px 3.5px 4.3px #1d2631; */
+}
+
+.flight-main-div {
+  display: flex;
+  margin: 0.5rem 0rem;
+  padding: 1rem;
+  border-style: solid;
+  border-width: 0.1rem;
+  border-radius: 0.5rem;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: #7d98ba;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: stretch;
+  transition: box-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.flight-main-div-icon {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.flight-main-div-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0.2rem 0rem;
+}
+
+.flight-main-div:hover {
+  background-color: rgb(232, 244, 244);
+  border-bottom-color: #0072ff;
+  box-shadow: 1px 3.5px 4.3px #1d2631;
+}
+
+.weather-main-div:hover {
+  border-bottom-color: #0072ff;
+  box-shadow: 1px 3.5px 4.3px #1d2631;
+}
+
+.flight-inner-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name-data-style {
+  margin: 0rem 0.3rem;
+}
+
+.data-style {
+  display: inline-block;
+  border-style: solid;
+  border-width: 0.1rem;
+  border-radius: 0.3rem;
+  padding: 0rem 0.3rem;
+  width: max-content;
+  height: max-content;
+  border-color: #9772725f;
+}
+
+.data-style:hover {
+  box-shadow: 1px 3.5px 4.3px rgb(38, 99, 147);
+}
+
+.weather-main-div {
+  width: 100%;
+  display: flex;
+  margin: 0.5rem 0rem;
+  padding: 2rem;
+  border-style: solid;
+  border-width: 0.1rem;
+  border-radius: 0.5rem;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: #0073ff75;
+  transition: box-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* .fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 1s;
+} */
+
+/* .animate-fade-in{
+  animation: fade-in 2s ease;
+}
+
+@keyframes fade-in { 
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+} */
+
+/* .rotate {
+  animation: rotate 2s linear 2;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+ */
+
+
+.weather-inner-div {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.dataheading {
+  margin-top: 2rem;
+}
+
+.RenderComp {
+  display: flex;
+  width: 110%;
+  padding-bottom: 3rem;
+}
+
+.main-render-div-data-firstchild-weather {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  width: 54%;
+}
+
+.main-render-div-data-firstchild-flight {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 79%;
+}
+
+.LoopRoundedIcon-style:hover {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+  background-color: #0072ff;
+  border-radius: 1rem;
+  color: white;
+  box-shadow: 0px 0.5px 12.3px rgb(19, 19, 19);
+}
+
+.Footer {
+  background-color: #0072ff;
+  width: 125%;
+}
+
+.Footer-content {
+  width: 30%;
+  height: min-content;
+  word-wrap: break-word;
+}
+
+.FooterComp-style {
+  display: flex;
+    font-size: 15px;
+    justify-content: flex-start;
+    color: rgb(238 238 238);
+    padding: 0.5rem;
+    background-image: url('./Wallpapers/Wall1.jpg');
+    background-size: 100% 185%;
+    background-repeat: no-repeat;
+    background-position: 0rem -4rem;
+    text-shadow: #000000 0 0px 1px;
+}
+
+.NotFound-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 125%;
+}
