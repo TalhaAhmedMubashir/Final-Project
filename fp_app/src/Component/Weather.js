@@ -26,8 +26,8 @@ export default function WeatherDetail(props) {
 
     return (
         <div className="main-render-div-data">
-            <div className='main-render-div-data-firstchild-weather'>
-                <div>Weather <CloudRoundedIcon /></div>
+            <div className={props.isdashboard?'main-render-div-data-firstchild-weather1':'main-render-div-data-firstchild-weather2'}>
+                <div className='main-render-div-data-firstchild-weather-first'><div className={props.isdashboard?'ICon-Style2':"ICon-Style4"}>W</div></div>
                 <div onClick={async () => { let data = await GetWeatherDetail(); setstate([...data]) }}><CloudSyncTwoToneIcon className='LoopRoundedIcon-style' /></div>
             </div>
             <div>

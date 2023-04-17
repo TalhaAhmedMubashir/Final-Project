@@ -18,8 +18,8 @@ export default function DashBoard() {
 
     return (
         <div className='RenderComp'>
-            <WeatherDetail/>
-            <FlightDetail/>
+            <WeatherDetail isdashboard="true"/>
+            <FlightDetail isdashboard="true"/>
         </div>
     )
 }

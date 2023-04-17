@@ -120,7 +120,7 @@ exports.signupwithcredentials = async (req, res) => {
 
 
 function isValidPassword(usergivenpassword, userdbpassword) {
-    console.log("Before bycrypt", usergivenpassword, " userdbpass :", userdbpassword)
+    //console.log("Before bycrypt", usergivenpassword, " userdbpass :", userdbpassword)
     return bcrypt.compareSync(usergivenpassword, userdbpassword)
 }
 
@@ -139,8 +139,8 @@ exports.signinwithcredentials = async (req, res) => {
             accessToken: null,
         });
     }
-    console.log("USER AT SIGN IN : ", user[0].password)
-    console.log("REQ :", req.body.password)
+    // console.log("USER AT SIGN IN : ", user[0].password)
+    // console.log("REQ :", req.body.password)
 
     if (!isValidPassword(req.body.password, user[0].password)) {
         return res.send({

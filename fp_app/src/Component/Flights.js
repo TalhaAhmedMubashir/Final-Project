@@ -5,7 +5,7 @@ import CloudSyncTwoToneIcon from '@mui/icons-material/CloudSyncTwoTone';
 import ConnectingAirportsSharpIcon from '@mui/icons-material/ConnectingAirportsSharp';
 
 
-export default function FlightDetail() {
+export default function FlightDetail(props) {
     const [state, setstate] = useState([])
 
     useEffect(
@@ -23,12 +23,10 @@ export default function FlightDetail() {
             };
         }, []
     )
-
-
     return (
         <div className="main-render-div-data">
-            <div className='main-render-div-data-firstchild-flight'>
-                <div>Flight Detail <FlightRoundedIcon /></div>
+            <div className={props.isdashboard? 'main-render-div-data-firstchild-flight1' : 'main-render-div-data-firstchild-flight2'}>
+                <div className='main-render-div-data-firstchild-flight-first'><div className={props.isdashboard?'ICon-Style':'ICon-Style3'}>F</div></div>
                 <div onClick={async () => { let data = await GetFlightDetail(); setstate([...data]) }}><CloudSyncTwoToneIcon className='LoopRoundedIcon-style' /></div>
             </div>
             <div>

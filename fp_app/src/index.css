@@ -16,6 +16,7 @@ body {
   color: white;
   width: fit-content;
   padding: 0.5rem;
+  margin-top: 1rem;
 }
 
 code {
@@ -395,19 +396,73 @@ code {
   padding-bottom: 3rem;
 }
 
-.main-render-div-data-firstchild-weather {
-  display: flex;
-  justify-content: space-between;
-  border-radius: 0.5rem;
-  padding: 0.5rem;
-  width: 54%;
-}
-
-.main-render-div-data-firstchild-flight {
+.main-render-div-data-firstchild-weather1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 79%;
+  border-radius: 0.5rem;
+  margin-bottom: 0.2rem;
+  background-color: #0072ff;
+  border-radius: 0.2rem;
+  width: 54%;
+  height: 3rem;
+  padding: 1.2rem;
+}
+
+.main-render-div-data-firstchild-weather2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.5rem;
+  margin-bottom: 0.2rem;
+  background-color: #0072ff;
+  border-radius: 0.2rem;
+  margin-left: 3rem;
+  width: 27%;
+  height: 3rem;
+  padding: 1.2rem;
+}
+
+
+.main-render-div-data-firstchild-flight1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin-bottom: 0.2rem;
+  background-color: #0072ff;
+  border-radius: 0.2rem;
+  /* width: 7rem; */
+  height: 3rem;
+  padding: 1.2rem;
+}
+
+.main-render-div-data-firstchild-flight2 {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 2rem;
+  align-items: center;
+  width: 41%;
+  margin-bottom: 0.2rem;
+  background-color: #0072ff;
+  border-radius: 0.2rem;
+  /* width: 7rem; */
+  height: 3rem;
+  padding: 1.2rem;
+  margin-left: 2.5rem;
+}
+
+
+.main-render-div-data-firstchild-flight-first {
+  background-color: #0072ff;
+  width: 80%;
+  position: relative;
+}
+
+.main-render-div-data-firstchild-weather-first {
+  background-color: #0072ff;
+  width: 60%;
+  position: relative;
 }
 
 .LoopRoundedIcon-style:hover {
@@ -428,19 +483,20 @@ code {
   width: 30%;
   height: min-content;
   word-wrap: break-word;
+  padding-left: 1rem;
 }
 
 .FooterComp-style {
   display: flex;
-    font-size: 15px;
-    justify-content: flex-start;
-    color: rgb(238 238 238);
-    padding: 0.5rem;
-    background-image: url('./Wallpapers/Wall1.jpg');
-    background-size: 100% 185%;
-    background-repeat: no-repeat;
-    background-position: 0rem -4rem;
-    text-shadow: #000000 0 0px 1px;
+  font-size: 15px;
+  justify-content: flex-start;
+  color: rgb(238 238 238);
+  padding: 0.5rem;
+  background-image: url('./Wallpapers/Wall1.jpg');
+  background-size: 100% 185%;
+  background-repeat: no-repeat;
+  background-position: 0rem -4rem;
+  text-shadow: #000000 0 0px 1px;
 }
 
 .NotFound-style {
@@ -448,4 +504,66 @@ code {
   justify-content: center;
   align-items: center;
   width: 125%;
+}
+
+.ICon-Style {
+  border-radius: 4rem;
+  width: 5rem;
+  height: 5rem;
+  background-color: #f9fcff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  color: #0072ff;
+  position: absolute;
+  top: -3rem;
+  left: 11rem;
+}
+
+.ICon-Style3 {
+  border-radius: 4rem;
+  width: 5rem;
+  height: 5rem;
+  background-color: #f9fcff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  color: #0072ff;
+  position: absolute;
+  top: -3rem;
+  left: 15rem;
+}
+
+
+.ICon-Style2 {
+  border-radius: 4rem;
+  width: 5rem;
+  height: 5rem;
+  background-color: #f9fcff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  color: #0072ff;
+  position: absolute;
+  top: -3rem;
+  left: 6.3rem;
+}
+
+
+.ICon-Style4 {
+  border-radius: 4rem;
+  width: 5rem;
+  height: 5rem;
+  background-color: #f9fcff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  color: #0072ff;
+  position: absolute;
+  top: -3rem;
+  left: 9rem;
 }
