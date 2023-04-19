@@ -6,7 +6,6 @@ import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import EmailRoundedIcon from '@mui/icons-material/EmailRounded';
 import SupervisedUserCircleRoundedIcon from '@mui/icons-material/SupervisedUserCircleRounded';
 import FooterComp from '../Component/FooterComp';
-import { signoutwithfacebook } from '../Server/server';
 
 export default function Defaultlayout() {
 
@@ -71,9 +70,7 @@ export function Displayuserdetail(props) {
     )
 }
 
-export async function clearrecord() {
-    await signoutwithfacebook()
-    
+export function clearrecord() {
     window.location.href = '/';
     // Replace the current page in the history with the target URL
     window.history.replaceState(null, null, '/');

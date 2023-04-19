@@ -32,11 +32,14 @@ export default function CredentialsScreen() {
     if (state.password === state.confirmpassword) {
       if (state.email.length > 0 && state.name.length > 0 && state.password.length > 0) {
         signupFunction(state)
+      } else {
+        alert("User credentials is not valid")
       }
     }
     else {
       alert("User credentials is not valid")
     }
+
   }
 
   function userinput(e) {
@@ -53,7 +56,7 @@ export default function CredentialsScreen() {
       <div className="container-md-fluid containerLocation">
         <div className="row">
           <div className="col-lg-12 col-md-10 CredentialsHeading">
-            <h1>Flight Management System <FlightTakeoffRoundedIcon/></h1>
+            <h1>Flight Management System <FlightTakeoffRoundedIcon /></h1>
           </div>
         </div>
         <div className="row">
@@ -79,15 +82,15 @@ export function LoginComp(props) {
       <div className="col-md-6 col-sm-6 registration">
         <input className="inputfields" name="email" onChange={(e) => props.userinput(e)} placeholder="Enter email" required />
         <input className="inputfields" type="password" name="password" onChange={(e) => props.userinput(e)} placeholder="Enter password" required />
-        <button className="button" onClick={() => props.login()}>Login <LoginRoundedIcon/></button>
+        <button className="button" onClick={() => props.login()}>Login <LoginRoundedIcon /></button>
       </div>
       <div className="col-md-6 col-sm-5 facebookbtnlocation">
         <button className="button" onClick={() => FacebookSignFunction()}>
-          <FacebookRoundedIcon/> Facebook
+          <FacebookRoundedIcon /> Facebook
         </button>
       </div>
     </div>
-    );
+  );
 }
 
 export function RegistrationCredentialsComp(props) {
@@ -99,7 +102,7 @@ export function RegistrationCredentialsComp(props) {
       <input className="inputfields" name="confirmpassword" onChange={(e) => props.userinput(e)} placeholder="Enter confirm password" required />
 
       <button className="button" onClick={() => props.register()}>
-        <AppRegistrationRoundedIcon/> Register
+        <AppRegistrationRoundedIcon /> Register
       </button>
     </>
   );
