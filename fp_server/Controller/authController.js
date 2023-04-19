@@ -7,14 +7,15 @@ const FacebookStrategy = require('passport-facebook').Strategy;
 
 
 passport.serializeUser(function (user, cb) {
+  console.log("SER : ",user)
   process.nextTick(function () {
-    cb(null, { id: user.id, username: user.username, name: user.name });
+    //First paramerter of cb is indicating an error
+    cb(null, { id: user.id, name: user.username, email: user.email, accessToken : user.accessToken, userType : user.userType});
   });
 });
 
 passport.deserializeUser(function (user, cb) {
   process.nextTick(function () {
-    //console.log("Deserial : ", user)
     cb(null, user);
   });
 });
@@ -28,7 +29,6 @@ passport.use(new FacebookStrategy({
   enableProof: false // Add this line to disable proof key
 },
   async (refreshToken, accessToken, undefine_user, profile, cb) => {
-    //console.log("refreshToken : ",refreshToken," accessToken : ",accessToken," undefine : ",undefine_user)
     try {
       const user = await User.findOne({ facebookId: profile.id });
       if (!user) {
@@ -56,9 +56,6 @@ passport.use(new FacebookStrategy({
 
 fBRouter.get('/facebook', passport.authenticate('facebook', { scope: ['public_profile',"email"] }));
 
-fBRouter.get('/facebook/redirect/flightmanagement', passport.authenticate('facebook', {
-  successRedirect: '/success',
-  failureRedirect: '/login'
-}));
+fBRouter.get('/facebook/redirect/flightmanagement', passport.authenticate('facebook', {successRedirect: '/success',failureRedirect: '/login'}));
 
 module.exports = fBRouter;
