@@ -1,4 +1,5 @@
 import isEmpty from 'lodash/isEmpty';
+import { clearrecord } from '../layout/DefaultLayout';
 
 
 export function FacebookSignFunction() {
@@ -39,7 +40,10 @@ export async function GetWeatherDetail(){
     }).catch((error) => console.log("Search error :", error.message))
 
   let searchresult = await response.json()
-  // console.log("F : ",searchresult.weatherdb)
+  if(searchresult.status === 401){
+    alert(searchresult.message)
+    clearrecord()
+  }
   return await searchresult.weatherdb
 }
 
@@ -57,6 +61,10 @@ export async function GetFlightDetail(){
     }).catch((error) => console.log("Search error :", error.message))
 
   let searchresult = await response.json()
+  if(searchresult.status === 401){
+    alert(searchresult.message)
+    clearrecord()
+  }
   return await searchresult.flightdb
 }
 
@@ -103,4 +111,16 @@ export async function signinFunction(Credentials) {
   return false
 }
 
+export async function signoutwithfacebook(){
+  console.log("HIT Logout")
+  const response = await fetch(
+    'http://localhost:3002/user/logout',
+    {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }
+  ).catch((error) => console.log("Login error :", error.message))
+}
 

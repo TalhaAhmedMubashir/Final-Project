@@ -32,8 +32,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
     secret: process.env.SESSIONSECRET,
     resave: false,
-    saveUninitialized: false,
-    store: MongoStore.create({ mongoUrl:process.env.DBLINK })
+    saveUninitialized: true,
+    cookie: { maxAge: process.env.SESSIONEXPIRETIMEINMINUTES * 60 * 1000, secure: false ,sessioncreated : new Date().getTime()},
+    store: MongoStore.create({ mongoUrl: process.env.DBLINK })
 }));
 
 app.use(passport.initialize());

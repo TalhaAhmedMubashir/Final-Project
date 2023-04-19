@@ -14,10 +14,9 @@ exports.fetchToken = async (req, res) => {
     if (req.body.uid.length > 0) {
         const objectId = new ObjectId(req.body.uid);
         const user = await User.find({ _id: objectId });
-        const { name, accessToken, email ,userType} = user[0]
-        //console.log("USER FOUND FOR TOKEN :",user)
+        const { name, accessToken, email, userType } = user[0]
         if (accessToken.length > 0) {
-            res.json({ name, accessToken, email ,userType})
+            res.json({ name, accessToken, email, userType })
         }
     }
 }
@@ -26,24 +25,23 @@ exports.login = (res) => {
     res.redirect(`http://localhost:3000/`);
 }
 
-exports.FlightDetailServer = async(req,res) =>{
-    let flightdb={}
-    console.log("Flight hit")
-    FlightDetail.find({}).then( async (flight) => {
+exports.FlightDetailServer = async (req, res) => {
+    let flightdb = {}
+    FlightDetail.find({}).then(async (flight) => {
         //doing stuff with the user array
-        if(flight.length>0){
+        if (flight.length > 0) {
             flightdb = flight
-        }else{
+        } else {
             const updateflight = new FlightDetail(
                 {
                     flightname: "Qatar Airlines",
                     altitude: "27000",
                     speed: "1200 knot",
                     location: "Karachi",
-                    fuel:"100 litre",
-                    arrivalestiamtedtime:"2 hr",
-                    distance:"200 km",
-                    aircraftname:"Boeing",
+                    fuel: "100 litre",
+                    arrivalestiamtedtime: "2 hr",
+                    distance: "200 km",
+                    aircraftname: "Boeing",
                 }
             )
             await updateflight.save(updateflight).then(
@@ -52,18 +50,17 @@ exports.FlightDetailServer = async(req,res) =>{
                 }
             )
         }
-        console.log("Flight hit before return : ",flightdb)
-        res.send({flightdb}) 
+        res.send({ flightdb })
     });
 }
 
-exports.WeatherDetailServer = async (req,res) => {
+exports.WeatherDetailServer = async (req, res) => {
     let weatherdb = {}
-    WeatherDetail.find({}).then( async (weather) => {
+    WeatherDetail.find({}).then(async (weather) => {
         //doing stuff with the user array
-        if(weather.length>0){
-            weatherdb =weather
-        }else{
+        if (weather.length > 0) {
+            weatherdb = weather
+        } else {
             const updateweather = new WeatherDetail(
                 {
                     temperature: "32 C",
@@ -74,16 +71,15 @@ exports.WeatherDetailServer = async (req,res) => {
             )
             await updateweather.save(updateweather).then(
                 () => {
-                    weatherdb= updateweather
+                    weatherdb = updateweather
                 }
             )
         }
-        res.send({weatherdb}) 
+        res.send({ weatherdb })
     });
 }
 
 function register(req, res) {
-    //console.log("Request : ", request.body)
     const salt = bcrypt.genSaltSync(saltRounds);
     if (!req.body.password) {
         res.status(401).send({
@@ -97,7 +93,6 @@ function register(req, res) {
         password: hashedPassword,
         userType: "Local"
     })
-    //console.log("Request0 : ", newuser)
     return newuser;
 }
 
@@ -120,7 +115,6 @@ exports.signupwithcredentials = async (req, res) => {
 
 
 function isValidPassword(usergivenpassword, userdbpassword) {
-    //console.log("Before bycrypt", usergivenpassword, " userdbpass :", userdbpassword)
     return bcrypt.compareSync(usergivenpassword, userdbpassword)
 }
 
@@ -139,8 +133,6 @@ exports.signinwithcredentials = async (req, res) => {
             accessToken: null,
         });
     }
-    // console.log("USER AT SIGN IN : ", user[0].password)
-    // console.log("REQ :", req.body.password)
 
     if (!isValidPassword(req.body.password, user[0].password)) {
         return res.send({
@@ -166,4 +158,17 @@ exports.signinwithcredentials = async (req, res) => {
         accessToken: token,
     });
 
+}
+
+exports.logout = async (req, res) => {
+    console.log("Logout at server")
+    req.session.destroy(err => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("Session is going to clear")
+            res.clearCookie('connect.sid'); // clear the session cookie
+            res.redirect('http://localhost:3000');
+        }
+    });
 }

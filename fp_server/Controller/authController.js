@@ -7,10 +7,9 @@ const FacebookStrategy = require('passport-facebook').Strategy;
 
 
 passport.serializeUser(function (user, cb) {
-  console.log("SER : ",user)
   process.nextTick(function () {
     //First paramerter of cb is indicating an error
-    cb(null, { id: user.id, name: user.username, email: user.email, accessToken : user.accessToken, userType : user.userType});
+    cb(null, { id: user.id, name: user.username, email: user.email, userType : user.userType});
   });
 });
 

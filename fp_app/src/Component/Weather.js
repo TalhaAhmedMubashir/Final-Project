@@ -36,7 +36,7 @@ export default function WeatherDetail(props) {
                         return <SubFunctionWeatherDetail temperature={data.temperature} humidity={data.humidity} location={data.location} uvindex={data.uvindex} key={index} />
                     })
                         :
-                        <div className='loading'><span class="spinner-border spinner-border-sm" /> Loading...</div>
+                        <div className='loading'><span className="spinner-border spinner-border-sm" /> Loading...</div>
                     )
                 }
             </div>

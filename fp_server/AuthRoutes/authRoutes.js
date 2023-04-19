@@ -6,11 +6,14 @@ const {verifyToken} = require('../Authentication/jwtauthentication')
 const authenticateUser = require('../Authentication/authentication');
 // const verifyToken = require("../Authentication/jwtauthentication")
 
+
+
 // router.use((req, res, next) => {
 //     console.log(`Request type: ${req.method}`);
 //     console.log(`Request URL: ${req.originalUrl}`);
 //     console.log("Header : ",req.headers['authorization'])
 //     console.log("Body :",req.body)
+//     console.log("Session : ",req.session)
 //     next();
 //   });
 
@@ -18,6 +21,7 @@ router.use('/auth', fBRouter);
 
 router.get('/login',controller.login);
 
+router.get('/user/logout',controller.logout)
 
 router.get("/success", controller.successtoRedirect);
 
@@ -32,8 +36,6 @@ router.post('/user/weather/FaceBook',controller.WeatherDetailServer)
 
 router.use('/user/flight/FaceBook' , authenticateUser)
 router.post('/user/flight/FaceBook',controller.FlightDetailServer)
-
-
 
 router.use("/user/weather/Local" ,verifyToken)
 router.post("/user/weather/Local" ,controller.WeatherDetailServer)
